@@ -1,7 +1,5 @@
 # Resume Analyzer
 
-![Resume Analyzer](https://www.betterteam.com/images/betterteam-technical-recruiter-resume-3999x2666-20201211.jpeg?crop=16:9,smart&width=1200&dpr=2&format=pjpg&auto=webp&quality=85)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -30,7 +28,7 @@ A collection of 2400+ Resume Examples taken from livecareer.com for categorizing
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your_username/resume-analyzer.git
+    git clone https://github.com/pedroborgescruz/resume-analyzer.git
     ```
 
 2. Install the required dependencies:
