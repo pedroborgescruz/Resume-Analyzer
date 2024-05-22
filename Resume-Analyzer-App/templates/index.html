@@ -11,8 +11,13 @@
     <script>
         function validateForm() {
             var textarea = document.getElementById("resume");
-            if (textarea.value.trim() === "") {
-                alert("Please paste your resume before submitting.");
+            var skillsarea = document.getElementById("skills");
+            if (textarea.value.trim() === "") || (skillsarea.value.trim()) {
+                if (textarea.value.trim() === "") {
+                    alert("Please paste your resume before submitting.");
+                } else {
+                    alert("Please insert required skills before submitting.");
+                }
                 return false; // Prevent form submission
             }
             return true; // Allow form submission
@@ -20,20 +25,24 @@
     </script>
 </head>
 <body>
-    <div class="main">
+    <div>
         <h1>&lt; Resume Analyzer &gt;</h1>
+    </div>
+    <div class="description">
         <form action="/result" method="post" onsubmit="return validateForm()">
-            <p class="description">Recruiters, especially those at big tech companies, often need to sift 
-                through thousands of resumes to identify suitable candidates. Consequently,
-                developing tools to assist in this process is a natural progression.
-                This app leverages NLP-related libraries in Python - such as Gensim, NLTK,
-                spaCy, and RegEx - and data manipulation to create tools designed to
-                support your hiring process.</p>
-            <label for="resume" style="color: #007bff"><h2>Paste your resume here:</h2></label><br>
+            <label for="resume" style="color: #007bff"><h2>Paste your resume here:</h2></label>
             <textarea id="resume" name="resume" rows="20" cols="50"></textarea><br>
+
+            <label for="skills" style="color: #007bff"><h2>Enter required skills:</h2>
+            <h3 class="description">[!] Make sure your input is comma-separated</h3></label><br>
+            <textarea id="skills" name="skills"></textarea><br><br>
+
             <input type="submit" value="Go">
         </form>
     </div>
-    <footer><p>&lt; Made with ❤ </p><div class="bold"><p>Borges 2024 &gt;</p></div></footer>
+    <footer>
+        <h3>&lt; Made with <span class="heart">❤</span> Borges 2024 &gt;</h3>
+        <p class="footer-description">Recruiters often need to sift through thousands of resumes to identify suitable candidates.<br>Consequently, developing tools to assist in this process is a natural progression. <br>This app leverages NLP-related libraries in Python - such as Gensim, NLTK, spaCy,<br>and RegEx - and data manipulation to create tools designed to<br>support your hiring process.</p>
+    </footer>
 </body>
 </html>
