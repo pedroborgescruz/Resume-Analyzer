@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request
 import spacy
 from spacy.pipeline import EntityRuler
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 import jsonlines
 from spacy import displacy
 
@@ -29,6 +31,14 @@ options = {
     "colors": colors,
 }
 
+def get_skills(text):
+    doc = nlp(text)
+    skills = [ent.text for ent in doc.ents if ent.label_ == "SKILL"]
+    return skills
+
+def unique_skills(skills):
+    return list(set(skills))
+
 # Function to extract and visualize entities
 def visualize_entities(text):
     doc = nlp(text)
@@ -43,8 +53,16 @@ def index():
 def result():
     if request.method == 'POST':
         resume_text = request.form['resume']
+        required_skills = request.form['skills'].lower().split(',')
+        
+        # Process resume text
+        resume_skills = unique_skills(get_skills(resume_text.lower()))
+        matched_skills = [skill for skill in required_skills if skill in resume_skills]
+        score = len(matched_skills)
+        match = round((score / len(required_skills)) * 100, 1)
+    
         visualization = visualize_entities(resume_text)
-        return render_template('result.html', resume_text=resume_text, visualization=visualization)
+        return render_template('result.html', resume_text=resume_text, visualization=visualization, match=match, matched_skills=matched_skills)
 
 if __name__ == '__main__':
     app.run(debug=True)
