@@ -546,6 +546,8 @@
 {"label":"SKILL","pattern":[{"LOWER":"dependency"},{"LOWER":"management"}]}
 {"label":"SKILL","pattern":[{"LOWER":"dependency"},{"LOWER":"monitoring"}]}
 {"label":"SKILL","pattern":[{"LOWER":"deploybot"}]}
+{"label":"SKILL","pattern":[{"LOWER":"portuguese"}]}
+{"label":"SKILL","pattern":[{"LOWER":"nltk"}]}
 {"label":"SKILL","pattern":[{"LOWER":"deployment"}]}
 {"label":"SKILL","pattern":[{"LOWER":"deployment"},{"LOWER":"as"},{"LOWER":"a"},{"LOWER":"service"}]}
 {"label":"SKILL","pattern":[{"LOWER":"description"},{"LOWER":"logic"}]}
