@@ -10,8 +10,20 @@ body {
 }
 
 h1 {
-    color: #007bff;
-    margin-bottom: 20px;
+    color: #006eff;
+    padding: 20px;
+}
+
+.title {
+    color: #ffffff;
+    font-weight: bolder;
+}
+
+.zone {
+    color: #FFF;
+    background-color: #232323;
+    font-size: 2em;
+    transition: all 0.3s linear;
 }
 
 form {
@@ -56,15 +68,46 @@ input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-/* Result Page Styles */
-.result-container {
-    background-color: #ffffff;
+.content {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.match-score {
+    background-color: #232323;
     padding: 20px;
+    color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
+    flex: 1;
+    position: sticky;
+    margin-top: 20px;
+    align-self: flex-start;
+}
+
+.match-percentage {
+    color: #007bff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#resume {
+    width: 780px;
+}
+
+.result-container {
+    background-color: #232323;
+    padding: 20px;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     margin-top: 20px;
+    max-width: 800px;
 }
 
 .result-container h2 {
@@ -82,6 +125,20 @@ input[type="submit"]:hover {
     margin-top: 20px;
 }
 
+.match-score ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.match-score ul li {
+    background-color: #e9ecef;
+    color: #232323;
+    margin: 5px 0;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
 a {
     display: inline-block;
     margin-top: 20px;
@@ -97,17 +154,37 @@ a:hover {
 footer {
     background-color: #181818;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Source Code Pro', monospace;
-    padding: 70px;
+    padding: 40px;
     text-align: center;
     color: #7c8b9a !important;
     font-size: 1em !important;
 }
 
+.footer-description {
+    margin-bottom: 20px;
+    color: #7c8b9a;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.footer-link {
+    color: #7c8b9a;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #0056b3;
+}
+
 .bold {
-    font-family: 'Source Code Pro', monospace;
     font-weight: 800;
     margin-left: 10px;
     color: #7c8b9a ;
@@ -115,8 +192,36 @@ footer {
 
 .description {
     color: #7c8b9a;
+    width: 800px;
 }
 
-.main {
-    margin-top: 50px;
+#skills {
+    text-decoration: none;
+    background-color: #232323;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    height: 50px;
+}
+
+li {
+    padding: 20px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.heart {
+    color:#007bff;
+}
+
+a {
+    font-size: 16px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
 }
