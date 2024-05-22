@@ -10,18 +10,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h1 class="main">Resume Analysis Result</h1>
+    <div class="content">
+        <h1 class="main">Resume Analyzer</h1>
+        <div class="match-score">
+            <h2>Skills Match</h2>
+            <p class="match-percentage">{{ match }}%</p>
+            <h3>Matched Skills:</h3>
+            <ul>
+                {% for skill in matched_skills %}
+                <li>{{ skill }}</li>
+                {% endfor %}
+            </ul>
+        </div>
         <div class="result-container">
-            <h2>Your Input:</h2>
-            <p>{{ resume_text }}</p>
             <div class="visualization">
-                <h2>Named Entity Visualization:</h2>
             <div>{{ visualization | safe }}</div>
             </div>
         </div>
     <a href="/">Analyze another resume</a>
     </div>
-    <footer><p>&lt; Made with ❤ </p><div class="bold"><p>Borges 2024 &gt;</p></div></footer>
+    <footer>
+        <h3>&lt; Made with <span class="heart">❤</span> Borges 2024 &gt;</h3>
+    </footer>
 </body>
 </html>
